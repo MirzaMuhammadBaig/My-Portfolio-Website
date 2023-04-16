@@ -37,6 +37,12 @@ import {
   hardhat,
   solidity,
   web3js,
+  presale,
+  tka,
+  cf,
+  blockchain,
+  pool,
+  fld,
 } from "../assets";
 
 export const navLinks = [
@@ -78,14 +84,14 @@ const technologies = [
     name: "Solidity",
     icon: solidity,
   },
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
+  // {
+  //   name: "HTML 5",
+  //   icon: html,
+  // },
+  // {
+  //   name: "CSS 3",
+  //   icon: css,
+  // },
   {
     name: "JavaScript",
     icon: javascript,
@@ -94,10 +100,10 @@ const technologies = [
     name: "TypeScript",
     icon: typescript,
   },
-  {
-    name: "Rust",
-    icon: rust,
-  },
+  // {
+  //   name: "Rust",
+  //   icon: rust,
+  // },
   {
     name: "React JS",
     icon: reactjs,
@@ -114,10 +120,10 @@ const technologies = [
     name: "Express JS",
     icon: express,
   },
-  {
-    name: "Web3 JS",
-    icon: web3js,
-  },
+  // {
+  //   name: "Web3 JS",
+  //   icon: web3js,
+  // },
   {
     name: "Ether JS",
     icon: etherjs,
@@ -126,10 +132,10 @@ const technologies = [
   //   name: "Truffle",
   //   icon: truffle,
   // },
-  // {
-  //   name: "Hardhat",
-  //   icon: hardhat,
-  // },
+  {
+    name: "Hardhat",
+    icon: hardhat,
+  },
   // {
   //   name: "Redux Toolkit",
   //   icon: redux,
@@ -150,26 +156,26 @@ const technologies = [
   //   name: "Bootstrap",
   //   icon: bootstrap,
   // },
-  // {
-  //   name: "MongoDB",
-  //   icon: mongodb,
-  // },
-  // {
-  //   name: "Kafka",
-  //   icon: kafka,
-  // },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Kafka",
+    icon: kafka,
+  },
   // {
   //   name: "git",
   //   icon: git,
   // },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
-  // {
-  //   name: "IPFS",
-  //   icon: ipfs,
-  // },
+  {
+    name: "docker",
+    icon: docker,
+  },
+  {
+    name: "IPFS",
+    icon: ipfs,
+  },
   // {
   //   name: "Pinata",
   //   icon: pinata,
@@ -303,51 +309,189 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Blockchain based Land Registry System",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This contract is a smart contract for a Land Registration system. It includes several functions for registering and verifying sellers, buyers, and land. The contract also includes functions for checking the owner of a particular land. The contract ensures that only the Land Inspector can verify or reject sellers, buyers, and land. Overall, this contract can be used as a basis for building a decentralized land registration system that is secure and transparent.",
     tags: [
       {
-        name: "react",
+        name: "Solidity",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "truffle",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
+        name: "web3js",
         color: "pink-text-gradient",
       },
     ],
     image: jobit,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Blockchain-based-Land-Registry-System",
+  },
+  {
+    name: "Special NFT (ERC721) Contract",
+    description:
+      "This is a Solidity smart contract implementing the ERC721 standard. It allows for the minting of unique tokens with metadata and implements various limits for different types of minters (admins, whitelisted users, and the general public) as well as per-wallet limits. This contract allows the owner to mint NFTs, set a maximum supply limit, set a per-wallet limit, and whitelist and admin addresses. The contract also allows for setting and updating the base URI for the tokens.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "web3js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "truffle",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "pinata",
+        color: "white-text-gradient",
+      },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Special-NFT-Market-Place",
+  },
+  {
+    name: "Presale or ICO",
+    description:
+      "The crowdsale contract of their ERC20 token and enable users to buy it with another ERC20 token. The owner of the contract can set the sale parameters, such as the sale start time, early bonus tokens, and early user quantities. The owner can increase the liquidity of the nft held by the contract by calling the increaseLiquidityCurrentRange function. The contract also provides a function to retrieve the contract balance. The contract can be used for fundraising or other similar applications where users can exchange tokens for a particular purpose.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "hardhat",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ethersjs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "web3js",
+        color: "white-text-gradient",
+      },
+    ],
+    image: presale,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Presale-or-initial-coin-offering-ICO-",
+  },
+  {
+    name: "TokenLuncher Airdrop",
+    description:
+      "The contract can distribute tokens for free or for a price, depending on the configuration of the contract. Users can purchase tokens using Ether or receive them for free, and there are limits on the number of tokens that each user can receive. There are constraints on the timing of purchases. Finally, there is a special discount for early investors.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "openzeppelin",
+        color: "green-text-gradient",
+      },
+      // {
+      //   name: "scss",
+      //   color: "pink-text-gradient",
+      // },
+    ],
+    image: tka,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/TokenLuncher-Airdrop",
+  },
+  {
+    name: "Crowd Funding",
+    description:
+      "This code is a Solidity smart contract for a crowdfunding platform. It allows users to contribute funds to campaigns, vote for campaign proposals, and withdraw their contributions if the campaign does not reach its funding target. The contract is managed by a manager who can create campaigns and claim funds for completed campaigns.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      // {
+      //   name: "supabase",
+      //   color: "green-text-gradient",
+      // },
+      // {
+      //   name: "css",
+      //   color: "pink-text-gradient",
+      // },
+    ],
+    image: cf,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Crowd-Funding-Contract",
+  },
+  {
+    name: "Create Blockchain Using Javascript",
+    description:
+      "In this project, I have created a many functions of blockchain using JavaScript and the more confusion was exists in my mind that how does blockchain work practically?, the more confusion have cleared about how does blockchain work?",
+    tags: [
+      {
+        name: "javascript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "express",
+        color: "green-text-gradient",
+      },
+      {
+        name: "redis",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: blockchain,
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Self Uniswap or (DEFI)",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "First clone uniswap-v2-core and uniswap-v2-periphery and then create our custom uniswap and deploy on goerli then create some erc20 tokens for creating pools and then for swapping.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "hardhat",
+        color: "green-text-gradient",
+      },
+      {
+        name: "ethersjs",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Self-Uniswap",
+  },
+  {
+    name: "Get Pools Feeds From Different Dexs",
+    description:
+      "In this project, I am fetching feeds from different dexs of solana & ethereum and then that's data store in kafka with partitions.",
+    tags: [
+      {
+        name: "nodejs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "kafka",
+        color: "green-text-gradient",
+      },
+      {
+        name: "zookeeper",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "docker",
+        color: "white-text-gradient",
+      },
+    ],
+    image: pool,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Get-Pool-Feeds-From-different-dexs",
+  },
+  {
+    name: "Defi - Flash Loan Contract",
+    description:
+      "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
     tags: [
       {
         name: "nextjs",
@@ -362,8 +506,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: fld,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/DeFi--Create-a-Flash-Loan-contract-using-Aave",
   },
 ];
 

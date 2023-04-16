@@ -25,7 +25,6 @@ import pinata from "./tech/pinata.png";
 import rust from "./tech/rust.png";
 import solidity from "./tech/solidity.png";
 import web3js from "./tech/web3js.png";
-import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
@@ -35,18 +34,29 @@ import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
 
 import meta from "./company/antematter.png";
 import shopify from "./company/bawdicsoft.png";
 import starbucks from "./company/suffa.jpg";
 import tesla from "./company/selani.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import carrent from "./NFT.webp";
+import jobit from "./land.webp";
+import tripguide from "./uni.png";
+import presale from "./presale.webp";
+import tka from "./tka.jpg";
+import cf from "./cf.webp";
+import blockchain from "./blockchain.jpg";
+import pool from "./pool.jpg";
+import fld from "./fld.jpg";
 
 export {
+  fld,
+  pool,
+  blockchain,
+  cf,
+  tka,
+  presale,
   logo,
   backend,
   creator,
@@ -58,7 +68,6 @@ export {
   close,
   css,
   docker,
-  figma,
   git,
   html,
   javascript,
@@ -68,7 +77,6 @@ export {
   redux,
   tailwind,
   typescript,
-  threejs,
   meta,
   shopify,
   starbucks,
