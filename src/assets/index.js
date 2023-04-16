@@ -49,8 +49,12 @@ import cf from "./cf.webp";
 import blockchain from "./blockchain.jpg";
 import pool from "./pool.jpg";
 import fld from "./fld.jpg";
+import ecommerce from "./ecommerce.png";
+import p1 from "./1.png";
 
 export {
+  p1,
+  ecommerce,
   fld,
   pool,
   blockchain,

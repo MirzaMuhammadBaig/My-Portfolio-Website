@@ -43,6 +43,8 @@ import {
   blockchain,
   pool,
   fld,
+  ecommerce,
+  p1
 } from "../assets";
 
 export const navLinks = [
@@ -490,6 +492,85 @@ const projects = [
   },
   {
     name: "Defi - Flash Loan Contract",
+    description:
+      "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: fld,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/DeFi--Create-a-Flash-Loan-contract-using-Aave",
+  },
+  {
+    name: "Ecommerce Store",
+    description:
+      "This ecommerce store is not like amazon or daraz its like an admin panel and a client panel. Admin dashboard is under of admin and only admin can add, delete or update product. Clients can purcahse them and statics well be show on website dashboard.",
+    tags: [
+      {
+        name: "node",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "react",
+        color: "green-text-gradient",
+      },
+      {
+        name: "next",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "white-text-gradient",
+      },
+    ],
+    image: ecommerce,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
+  },
+  {
+    name: "Communication Between Client & You",
+    description:
+      "This website will provide ease to software houses and freelancers because this website is like trello or asana website. You can manage your project here, you can create slip after completion of project and you can do many more features in this website.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "react",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "mongoose",
+        color: "white-text-gradient",
+      },
+      {
+        name: "node",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "green-text-gradient",
+      },
+    ],
+    image: p1,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Manage-Communication",
+  },
+  {
+    name: "MMB NFT Dapp",
     description:
       "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
     tags: [
