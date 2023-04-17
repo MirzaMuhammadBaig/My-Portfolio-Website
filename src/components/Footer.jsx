@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
-const Navbar = () => {
+const Footer = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -56,35 +56,11 @@ const Navbar = () => {
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
-        </ul>
-        <ul className="list-none hidden sm:flex flex-row gap-6">
-            <li
-              className={`${
-                "Github" === "Github" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
-            >
-              <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">{"Github"}</a>
-            </li>
-
-            <li
-              className={`${
-                "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
-            >
-              <a href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`} target="blank">{"LinkedIn"}</a>
-            </li> 
-
-            <li
-              className={`${
-                "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
-            >
-              <a href={`https://www.fiverr.com/mirzamuhammad68`} target="blank">{"Fiverr"}</a>
-            </li>
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -123,4 +99,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Footer;

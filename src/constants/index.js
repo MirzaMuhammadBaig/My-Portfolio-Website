@@ -44,7 +44,8 @@ import {
   pool,
   fld,
   ecommerce,
-  p1
+  p1,
+  qms,
 } from "../assets";
 
 export const navLinks = [
@@ -285,27 +286,27 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "This seller is very work hard. His communication and seller support skill is very good. Give me perfect work on time.",
+    name: "Philippe Alain",
+    designation: "Client",
+    company: "Fiverr",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I have impressed this seller because this seller have very good communication and problem solving skill. I APPRECIATE YOU.",
+    name: "Lvory Violet",
+    designation: "Client",
+    company: "Fiverr",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+      "This seller-service is awesome and on time. I impressed from his work. This seller is also guide me about my project. Fast and perfect service provider. From every angle this seller is perfect.",
+    name: "Arsalan fstom",
+    designation: "Client",
+    company: "Fiverr",
+    image: "https://randomuser.me/api/portraits/men/14.jpg",
   },
 ];
 
@@ -514,22 +515,26 @@ const projects = [
   {
     name: "Ecommerce Store",
     description:
-      "This ecommerce store is not like amazon or daraz its like an admin panel and a client panel. Admin dashboard is under of admin and only admin can add, delete or update product. Clients can purcahse them and statics well be show on website dashboard.",
+      "This ecommerce store is not like amazon or daraz. This website have an admin panel and a client panel. Admin dashboard only under of admin and only admin can add, delete or update product.  Admin will keep watching products statics. Clients can watch and purchase products. If any product stock have end, you will find out. Admin can also watch all about products deliveries.",
     tags: [
       {
-        name: "node",
+        name: "node - express",
         color: "blue-text-gradient",
       },
       {
-        name: "react",
+        name: "react - next",
         color: "green-text-gradient",
       },
       {
-        name: "next",
+        name: "mongodb - mongoose",
         color: "pink-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "redux-toolkit",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwindcss - bootstrap",
         color: "white-text-gradient",
       },
     ],
@@ -537,58 +542,54 @@ const projects = [
     source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
   },
   {
-    name: "Communication Between Client & You",
+    name: "Communication Between Client, You & Third-Party",
     description:
-      "This website will provide ease to software houses and freelancers because this website is like trello or asana website. You can manage your project here, you can create slip after completion of project and you can do many more features in this website.",
+      "In this project, I am doing communication better between clients, merchants and software houses or freelancers or service sellers whatever you can say.  If two much merchants or third parties wants to give you any client project then they will add in this website and you can see and select whatever project should take.",
     tags: [
       {
-        name: "nextjs",
+        name: "next - react",
         color: "blue-text-gradient",
       },
       {
-        name: "typescript",
-        color: "green-text-gradient",
-      },
-      {
-        name: "react",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "mongoose",
-        color: "white-text-gradient",
+        name: "mongoose - mongodb",
+        color: "grenn-text-gradient",
       },
       {
         name: "node",
-        color: "blue-text-gradient",
+        color: "pink-text-gradient",
       },
       {
         name: "tailwind",
-        color: "green-text-gradient",
+        color: "white-text-gradient",
       },
     ],
     image: p1,
     source_code_link: "https://github.com/MirzaMuhammadBaig/Manage-Communication",
   },
   {
-    name: "MMB NFT Dapp",
+    name: "Query Management System",
     description:
-      "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
+      "In client portal, you'll need to register or log in. Once you're in, you'll be able to browse through a variety of websites and view demos for each one. In admin portal if you looking to purchase a website, then your details and the website you're interested in, will reach us. We'll review your request and get in touch if we need any additional information or have any questions.",
     tags: [
       {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
+        name: "mongodb - mongoose",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "node - express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "react - next",
         color: "pink-text-gradient",
       },
+      {
+        name: "tailwind",
+        color: "white-text-gradient",
+      },
     ],
-    image: fld,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/DeFi--Create-a-Flash-Loan-contract-using-Aave",
+    image: qms,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/Query-Management-System",
   },
 ];
 

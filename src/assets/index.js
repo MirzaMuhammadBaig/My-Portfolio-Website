@@ -1,4 +1,4 @@
-import logo from "./logo.jpg";
+import logo from "./logo.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -42,6 +42,7 @@ import tesla from "./company/selani.png";
 
 import carrent from "./NFT.webp";
 import jobit from "./land.webp";
+import qms from "./qms.webp";
 import tripguide from "./uni.png";
 import presale from "./presale.webp";
 import tka from "./tka.jpg";
@@ -53,6 +54,7 @@ import ecommerce from "./ecommerce.png";
 import p1 from "./1.png";
 
 export {
+  qms,
   p1,
   ecommerce,
   fld,
