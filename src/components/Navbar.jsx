@@ -62,29 +62,38 @@ const Navbar = () => {
           ))}
         </ul>
         <ul className="list-none hidden sm:flex flex-row gap-6">
-            <li
-              className={`${
-                "Github" === "Github" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
-            >
-              <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">{"Github"}</a>
-            </li>
+          <li
+            className={`${
+              "Github" === "Github" ? "text-secondary" : "text-white"
+            } hover:text-white text-[14px] font-medium cursor-pointer`}
+          >
+            <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">
+              {"Github"}
+            </a>
+          </li>
 
-            <li
-              className={`${
-                "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
+          <li
+            className={`${
+              "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
+            } hover:text-white text-[14px] font-medium cursor-pointer`}
+          >
+            <a
+              href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`}
+              target="blank"
             >
-              <a href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`} target="blank">{"LinkedIn"}</a>
-            </li> 
+              {"LinkedIn"}
+            </a>
+          </li>
 
-            <li
-              className={`${
-                "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
-              } hover:text-white text-[14px] font-medium cursor-pointer`}
-            >
-              <a href={`https://www.fiverr.com/mirzamuhammad68`} target="blank">{"Fiverr"}</a>
-            </li>
+          <li
+            className={`${
+              "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
+            } hover:text-white text-[14px] font-medium cursor-pointer`}
+          >
+            <a href={`https://www.fiverr.com/mirzamuhammad68`} target="blank">
+              {"Fiverr"}
+            </a>
+          </li>
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -94,7 +103,6 @@ const Navbar = () => {
             className="w-[28px] h-[28px] object-contain"
             onClick={() => setToggle(!toggle)}
           />
-
           <div
             className={`${
               !toggle ? "hidden" : "flex"
@@ -102,19 +110,56 @@ const Navbar = () => {
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
               {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
+                <>
+                  <li
+                    key={nav.id}
+                    className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                      active === nav.title ? "text-white" : "text-secondary"
+                    }`}
+                    onClick={() => {
+                      setToggle(!toggle);
+                      setActive(nav.title);
+                    }}
+                  >
+                    <a href={`#${nav.id}`}>{nav.title}</a>
+                  </li>
+                </>
               ))}
+              <li
+                className={`${
+                  "Github" === "Github" ? "text-secondary" : "text-white"
+                } hover:text-white text-[14px] font-medium cursor-pointer`}
+              >
+                <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">
+                  {"Github"}
+                </a>
+              </li>
+
+              <li
+                className={`${
+                  "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
+                } hover:text-white text-[14px] font-medium cursor-pointer`}
+              >
+                <a
+                  href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`}
+                  target="blank"
+                >
+                  {"LinkedIn"}
+                </a>
+              </li>
+
+              <li
+                className={`${
+                  "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
+                } hover:text-white text-[14px] font-medium cursor-pointer`}
+              >
+                <a
+                  href={`https://www.fiverr.com/mirzamuhammad68`}
+                  target="blank"
+                >
+                  {"Fiverr"}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
