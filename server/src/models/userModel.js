@@ -2,6 +2,11 @@ import mongoose from "mongoose";
 import validator from "validator";
 
 const userSchema = new mongoose.Schema({
+  name:{
+    type: String,
+    required: [true, "Please provide an name"],
+    minLength: [4, "Name should be greater than 4 characters"],
+  },
   gmail: {
     type: String,
     required: [true, "Please provide an email"],

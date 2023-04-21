@@ -1,10 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { dbConnect } from "./config/connect.js";
 import cookieParser from "cookie-parser";
+import { dbConnect } from "./config/connect.js";
 import userroutes from "./routes/userroutes.js";
-import nodemailer from "nodemailer";
 
 // execute database connection
 dbConnect();
