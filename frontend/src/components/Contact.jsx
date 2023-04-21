@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -17,9 +18,26 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+  async function sendEmail (data) {
+    data.preventDefault();
+    console.log(form);
+    try {
+      await axios({
+        method: "post",
+        url: "http://localhost:8080/send",
+        data: { ...form },
+      });
+    } catch (err) {
+      setResult({
+        success: false,
+        message: "Something went wrong. Try again later",
+      });
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    console.log(event.target, "event");
 
     setForm({
       ...form,
@@ -31,19 +49,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
+    sendEmail()
       .then(
         () => {
           setLoading(false);
@@ -92,13 +98,13 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-medium mb-4'>Subject</span>
             <input
-              type='email'
+              type='text'
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your topic?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
