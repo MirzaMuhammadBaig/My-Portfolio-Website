@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     required: [true, "Please provide an name"],
     minLength: [4, "Name should be greater than 4 characters"],
   },
-  gmail: {
+  email: {
     type: String,
     required: [true, "Please provide an email"],
     unique: [true, "Email exist"],
@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  resetPasswordToken: String,
+  resetPasswordExpires: Date
 });
 
 export const User = mongoose.model("User", userSchema);

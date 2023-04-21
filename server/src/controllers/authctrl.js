@@ -1,5 +1,6 @@
 import express from "express";
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
 import bcrypt from "bcrypt";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -34,37 +35,6 @@ export const baseEndpoint = async (req, res) => {
   }
 };
 
-export const sendVerifyEmail = async (name, gmail, user_id) => {
-  try {
-    const mailOptions = {
-      from: "cryptodeveloper@gmail.com",
-      to: gmail,
-      subject: "For verify mail",
-      html: `Hi ${name}, please click here <a href="http://localhost:4000/verify?id=${user_id}"> to verify mail.</p>`,
-    };
-
-    transporter.sendMail(mailOptions, function (error, info) {
-      console.log("🚀 ~ mailOptions", mailOptions);
-      if (error) {
-        res.status(500).send({
-          success: false,
-          message: "Something went wrong. Try again later",
-        });
-      } else {
-        res.send({
-          success: true,
-          message: "Email has been sent, please verify",
-        });
-      }
-    });
-  } catch (error) {
-    res.status(500).send({
-      success: false,
-      message: "Something went wrong. Try again later",
-    });
-  }
-};
-
 export const verifyMail = async (req, res) => {
   try {
     const updateInfo = await User.updateOne(
@@ -86,13 +56,13 @@ export const verifyMail = async (req, res) => {
 // Register route
 export const register = async (req, res) => {
   try {
-    // try {
+
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
     const user = new User({
       name: req.body.name,
-      gmail: req.body.gmail,
+      email: req.body.email,
       password: hashedPassword,
       hashedpass: req.body.password,
     });
@@ -101,17 +71,10 @@ export const register = async (req, res) => {
 
     if (userData) {
       try {
-        const transporter = nodemailer.createTransport({
-          service: "gmail",
-          auth: {
-            user: "cryptodeveloper@gmail.com",
-            pass: "bogipejfnkqcribt",
-          },
-        });
 
         const mailOptions = {
-          from: "cryptodeveloper@gmail.com",
-          to: req.body.gmail,
+          from: process.env.EMAIL_ID,
+          to: user.email,
           subject: "For verify mail",
           html: `Hi ${user.name}, please click here <a href="http://localhost:4000/verify?id=${user._id}"> to verify mail.</p>`,
         };
@@ -121,7 +84,7 @@ export const register = async (req, res) => {
           if (error) {
             res.status(500).send({
               success: false,
-              message: error,
+              message: `${error},Email not send`,
             });
           } else {
             const jToken = jwt.sign(
@@ -132,8 +95,8 @@ export const register = async (req, res) => {
             );
 
             res.cookie("jwtToken", jToken, {
-              // httpOnly: true,
-              // secure: true,
+              httpOnly: true,
+              secure: true,
               maxAge: 72 * 60 * 60 * 1000,
             });
 
@@ -141,15 +104,11 @@ export const register = async (req, res) => {
               token: jToken,
               user: {
                 name: user.name,
-                gmail: user.gmail,
+                email: user.email,
                 _id: user._id,
               },
-              message: "Email has been sent at" + user.gmail + "please verify",
+              message: "Email has been sent at" + user.email + "please verify",
             });
-            // res.send({
-            //   success: true,
-            //   message: "Thanks for contacting us. We will get back to you shortly",
-            // });
           }
         });
       } catch (error) {
@@ -177,10 +136,10 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   try {
     // Find the user by email
-    const { gmail, password } = req.body;
+    const { email, password } = req.body;
 
     const user = await User.findOne({
-      gmail,
+      email,
     });
 
     if (!user)
@@ -211,7 +170,7 @@ export const login = async (req, res) => {
     res.status(201).json({
       token: jToken,
       user: {
-        gmail: user.gmail,
+        email: user.email,
         _id: user._id,
       },
       message: "User login successfully",
@@ -232,3 +191,75 @@ export const logout = async (req, res) => {
   });
   res.status(204).json({ message: "Logged out successfully" });
 };
+
+
+//////////////////////////////////
+
+export const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const token = crypto.randomBytes(20).toString('hex');
+    user.resetPasswordToken = token;
+    user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+    await user.save();
+
+    const mailOptions = {
+      from: process.env.EMAIL_ID,
+      to: email,
+      subject: 'Reset Password',
+      text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n
+        Please click on the following link, or paste this into your browser to complete the process:\n\n
+        http://localhost:4000/reset-password/${token}\n\n
+        If you did not request this, please ignore this email and your password will remain unchanged.\n`
+    };
+
+    transporter.sendMail(mailOptions, (err, response) => {
+      if (err) {
+        console.error('there was an error: ', err);
+      } else {
+        console.log('here is the response: ', response);
+        res.status(200).json('recovery email sent');
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+//////////////////////// 
+
+export const setForgotPassword = async (req, res) => {
+  const { token } = req.params;
+  const { password } = req.body;
+
+  try {
+    const user = await User.findOne({
+      resetPasswordToken: token,
+      resetPasswordExpires: { $gt: Date.now() }
+    });
+
+    if (!user) {
+      return res.status(400).json({ message: 'Token is invalid or has expired' });
+    }
+
+    user.password = password;
+    user.resetPasswordToken = null;
+    user.resetPasswordExpires = null;
+
+    await user.save();
+
+    res.status(200).json('password reset successful');
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+//////////////////////
