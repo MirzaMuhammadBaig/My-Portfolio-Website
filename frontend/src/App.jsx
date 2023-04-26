@@ -1,26 +1,29 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage.jsx";
+import ResetPassSlide from "./components/ResetPassSlide.jsx";
+import SetPassSlide from "./components/SetPassSlide.jsx";
+import SignUpSlide from "./components/SignUpSlide.jsx";
+import LogoutSlide from "./components/LogoutSlide.jsx";
+import SignInSide from "./components/SignInSide.jsx";
+import MainSlide from "./components/MainSlide.jsx";
+import AppSupport from "./components/AppSupport.jsx";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
-
-const App = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AppSupport />} />
+          <Route path="/main" element={<MainSlide />} />
+          <Route path="/signin" element={<SignInSide />} />
+          <Route path="/signup" element={<SignUpSlide />} />
+          <Route path="/resetpass" element={<ResetPassSlide />} />
+          <Route path="/logout" element={<LogoutSlide />} />
+          <Route path="/resetpass/set-pass" element={<SetPassSlide />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

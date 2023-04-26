@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
+import "../design/custom.css";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -30,26 +32,30 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+        scrolled ? "bgColor" : "bg-transparent"
       }`}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="w-full flex justify-between items-center max-w-7xl mx-auto settext">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 settext"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            MMB &nbsp;
-            <span className="sm:block hidden">Blockchain</span>
+          <img
+            src={logo}
+            alt="logo"
+            className="w-9 h-9 object-contain alignment"
+          />
+          <p className="text-white -[18px] font-bold cursor-pointer flex ">
+            Blockchain-Web &nbsp;
+            <span className="sm:block hidden settext">DEV</span>
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none text-white hidden sm:flex flex-row gap-10 ">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -57,27 +63,34 @@ const Navbar = () => {
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a className="settext text-white" href={`#${nav.id}`}>
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
         <ul className="list-none hidden sm:flex flex-row gap-6">
           <li
             className={`${
-              "Github" === "Github" ? "text-secondary" : "text-white"
+              "Github" ? "text-secondary" : "text-white"
             } hover:text-white text-[14px] font-medium cursor-pointer`}
           >
-            <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">
+            <a
+              className="settext text-white "
+              href={`https://github.com/MirzaMuhammadBaig`}
+              target="blank"
+            >
               {"Github"}
             </a>
           </li>
 
           <li
             className={`${
-              "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
+              "LinkedIn" ? "text-secondary" : "text-white"
             } hover:text-white text-[14px] font-medium cursor-pointer`}
           >
             <a
+              className="settext text-white"
               href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`}
               target="blank"
             >
@@ -87,16 +100,20 @@ const Navbar = () => {
 
           <li
             className={`${
-              "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
+              "Fiverr" ? "text-secondary" : "text-white"
             } hover:text-white text-[14px] font-medium cursor-pointer`}
           >
-            <a href={`https://www.fiverr.com/mirzamuhammad68`} target="blank">
+            <a
+              className="settext text-white"
+              href={`https://www.fiverr.com/mirzamuhammad68`}
+              target="blank"
+            >
               {"Fiverr"}
             </a>
           </li>
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden flex flex-1 justify-end items-center ">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -121,13 +138,13 @@ const Navbar = () => {
                       setActive(nav.title);
                     }}
                   >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a href={`${nav.id}`}>{nav.title}</a>
                   </li>
                 </>
               ))}
               <li
                 className={`${
-                  "Github" === "Github" ? "text-secondary" : "text-white"
+                  "Github" ? "text-secondary" : "text-white"
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
                 <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">
@@ -137,7 +154,7 @@ const Navbar = () => {
 
               <li
                 className={`${
-                  "LinkedIn" === "LinkedIn" ? "text-secondary" : "text-white"
+                  "LinkedIn" ? "text-secondary" : "text-white"
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
                 <a
@@ -150,7 +167,7 @@ const Navbar = () => {
 
               <li
                 className={`${
-                  "Fiverr" === "Fiverr" ? "text-secondary" : "text-white"
+                  "Fiverr" ? "text-secondary" : "text-white"
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
                 <a

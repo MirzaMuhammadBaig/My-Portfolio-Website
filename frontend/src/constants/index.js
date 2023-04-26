@@ -5,14 +5,9 @@ import {
   web,
   javascript,
   typescript,
-  html,
-  css,
   reactjs,
-  redux,
-  tailwind,
   nodejs,
   mongodb,
-  git,
   docker,
   meta,
   starbucks,
@@ -22,21 +17,13 @@ import {
   jobit,
   tripguide,
   fiverr,
-  chakra,
   next,
   express,
-  bootstrap,
   etherjs,
   ipfs,
   kafka,
-  materialui,
-  pinata,
-  rust,
-  postman,
-  truffle,
   hardhat,
   solidity,
-  web3js,
   presale,
   tka,
   cf,
@@ -46,7 +33,7 @@ import {
   ecommerce,
   p1,
   qms,
-} from "../assets";
+} from "../assets/index.js";
 
 export const navLinks = [
   {
@@ -87,14 +74,6 @@ const technologies = [
     name: "Solidity",
     icon: solidity,
   },
-  // {
-  //   name: "HTML 5",
-  //   icon: html,
-  // },
-  // {
-  //   name: "CSS 3",
-  //   icon: css,
-  // },
   {
     name: "JavaScript",
     icon: javascript,
@@ -103,10 +82,6 @@ const technologies = [
     name: "TypeScript",
     icon: typescript,
   },
-  // {
-  //   name: "Rust",
-  //   icon: rust,
-  // },
   {
     name: "React JS",
     icon: reactjs,
@@ -123,42 +98,14 @@ const technologies = [
     name: "Express JS",
     icon: express,
   },
-  // {
-  //   name: "Web3 JS",
-  //   icon: web3js,
-  // },
   {
     name: "Ether JS",
     icon: etherjs,
   },
-  // {
-  //   name: "Truffle",
-  //   icon: truffle,
-  // },
   {
     name: "Hardhat",
     icon: hardhat,
   },
-  // {
-  //   name: "Redux Toolkit",
-  //   icon: redux,
-  // },
-  // {
-  //   name: "Tailwind CSS",
-  //   icon: tailwind,
-  // },
-  // {
-  //   name: "Chakra UI",
-  //   icon: chakra,
-  // },
-  // {
-  //   name: "Material UI",
-  //   icon: materialui,
-  // },
-  // {
-  //   name: "Bootstrap",
-  //   icon: bootstrap,
-  // },
   {
     name: "MongoDB",
     icon: mongodb,
@@ -167,10 +114,6 @@ const technologies = [
     name: "Kafka",
     icon: kafka,
   },
-  // {
-  //   name: "git",
-  //   icon: git,
-  // },
   {
     name: "docker",
     icon: docker,
@@ -179,14 +122,6 @@ const technologies = [
     name: "IPFS",
     icon: ipfs,
   },
-  // {
-  //   name: "Pinata",
-  //   icon: pinata,
-  // },
-  // {
-  //   name: "Postman",
-  //   icon: postman,
-  // },
 ];
 
 const experiences = [
@@ -280,7 +215,6 @@ const experiences = [
       "Then show the output, like pool address, dex name, token price in that pool, liquidity & token pair.",
     ],
   },
-  
 ];
 
 const testimonials = [
@@ -314,7 +248,7 @@ const projects = [
   {
     name: "Blockchain based Land Registry System",
     description:
-      "This contract is a smart contract for a Land Registration system. It includes several functions for registering and verifying sellers, buyers, and land. The contract also includes functions for checking the owner of a particular land. The contract ensures that only the Land Inspector can verify or reject sellers, buyers, and land. Overall, this contract can be used as a basis for building a decentralized land registration system that is secure and transparent.",
+      "Smart contract for Land Registration system registers and verifies sellers, buyers, and land, and checks land ownership. Only the Land Inspector can approve or deny verification. Provides a secure and transparent foundation for decentralized land registration system.",
     tags: [
       {
         name: "Solidity",
@@ -330,12 +264,13 @@ const projects = [
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Blockchain-based-Land-Registry-System",
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Blockchain-based-Land-Registry-System",
   },
   {
     name: "Special NFT (ERC721) Contract",
     description:
-      "This is a Solidity smart contract implementing the ERC721 standard. It allows for the minting of unique tokens with metadata and implements various limits for different types of minters (admins, whitelisted users, and the general public) as well as per-wallet limits. This contract allows the owner to mint NFTs, set a maximum supply limit, set a per-wallet limit, and whitelist and admin addresses. The contract also allows for setting and updating the base URI for the tokens.",
+      "ERC721 smart contract enables minting of unique tokens with metadata, with limits for admins, whitelisted users, and the general public, including per-wallet limits. Features include minting of NFTs by the owner, max supply, wallet limit, address whitelisting, admin setting, and base URI update.",
     tags: [
       {
         name: "solidity",
@@ -351,16 +286,17 @@ const projects = [
       },
       {
         name: "pinata",
-        color: "white-text-gradient",
+        color: "color_white",
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Special-NFT-Market-Place",
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Special-NFT-Market-Place",
   },
   {
     name: "Presale or ICO",
     description:
-      "The crowdsale contract of their ERC20 token and enable users to buy it with another ERC20 token. The owner of the contract can set the sale parameters, such as the sale start time, early bonus tokens, and early user quantities. The owner can increase the liquidity of the nft held by the contract by calling the increaseLiquidityCurrentRange function. The contract also provides a function to retrieve the contract balance. The contract can be used for fundraising or other similar applications where users can exchange tokens for a particular purpose.",
+      "ERC20 token crowdsale contract allows purchase with another ERC20 token. Additionally, early users may receive bonus tokens based on the sale parameters set by the owner. Contract owner sets sale parameters, can increase NFT liquidity with function, retrieve contract balance, and use for fundraising/exchange purposes.",
     tags: [
       {
         name: "solidity",
@@ -376,53 +312,12 @@ const projects = [
       },
       {
         name: "web3js",
-        color: "white-text-gradient",
+        color: "color_white",
       },
     ],
     image: presale,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Presale-or-initial-coin-offering-ICO-",
-  },
-  {
-    name: "TokenLuncher Airdrop",
-    description:
-      "The contract can distribute tokens for free or for a price, depending on the configuration of the contract. Users can purchase tokens using Ether or receive them for free, and there are limits on the number of tokens that each user can receive. There are constraints on the timing of purchases. Finally, there is a special discount for early investors.",
-    tags: [
-      {
-        name: "solidity",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "openzeppelin",
-        color: "green-text-gradient",
-      },
-      // {
-      //   name: "scss",
-      //   color: "pink-text-gradient",
-      // },
-    ],
-    image: tka,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/TokenLuncher-Airdrop",
-  },
-  {
-    name: "Crowd Funding",
-    description:
-      "This code is a Solidity smart contract for a crowdfunding platform. It allows users to contribute funds to campaigns, vote for campaign proposals, and withdraw their contributions if the campaign does not reach its funding target. The contract is managed by a manager who can create campaigns and claim funds for completed campaigns.",
-    tags: [
-      {
-        name: "solidity",
-        color: "blue-text-gradient",
-      },
-      // {
-      //   name: "supabase",
-      //   color: "green-text-gradient",
-      // },
-      // {
-      //   name: "css",
-      //   color: "pink-text-gradient",
-      // },
-    ],
-    image: cf,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Crowd-Funding-Contract",
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Presale-or-initial-coin-offering-ICO-",
   },
   {
     name: "Create Blockchain Using Javascript",
@@ -444,6 +339,157 @@ const projects = [
     ],
     image: blockchain,
     source_code_link: "https://github.com/",
+  },
+  {
+    name: "TokenLuncher Airdrop",
+    description:
+      "The contract distributes tokens either for free or a fee, with user purchase limits and timing constraints. Tokens can be obtained using Ether or for free. Early investors receive a special discount.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "openzeppelin",
+        color: "green-text-gradient",
+      },
+    ],
+    image: tka,
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/TokenLuncher-Airdrop",
+  },
+  {
+    name: "Crowd Funding",
+    description:
+      "Solidity smart contract for crowdfunding platform enables user contributions, proposal voting, and withdrawal if funding target not met. Manager creates and manages campaigns, and claims funds for completed campaigns.",
+    tags: [
+      {
+        name: "solidity",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: cf,
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Crowd-Funding-Contract",
+  },
+  {
+    name: "Ecommerce Store",
+    description:
+      "This ecommerce store has separate admin and client panels. Only the admin can manage products through the admin dashboard, including adding, deleting, and updating. The admin can also monitor product statistics and deliveries. Clients can browse and purchase products, and the website alerts when a product is out of stock.",
+    tags: [
+      {
+        name: " express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "next",
+        color: "green-text-gradient",
+      },
+      {
+        name: "react",
+        color: "color_yellowgreen",
+      },
+      {
+        name: "mongodb",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "redux-toolkit",
+        color: "color_yellow",
+      },
+      {
+        name: "tailwind",
+        color: "color_white",
+      },
+      {
+        name: "bootstrap",
+        color: "color_brown",
+      },
+    ],
+    image: ecommerce,
+    source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
+  },
+  {
+    name: "Communication Between Client, You & Third-Party",
+    description:
+      "This project improves communication among clients, merchants, and software professionals. Third parties can post client projects on the website, and users can browse and select projects to work on.",
+    tags: [
+      {
+        name: "next",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "react",
+        color: "color_yellowgreen",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "mongoose",
+        color: "color_red",
+      },
+      {
+        name: "node",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "color_white",
+      },
+    ],
+    image: p1,
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Manage-Communication",
+  },
+  {
+    name: "Query Management System",
+    description:
+      "Portal access requires registration or login. Clients can preview websites. Admin portal for purchase inquiries requires user details and website of interest. Reviews may prompt additional questions or information.",
+    tags: [
+      {
+        name: "express",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "react - next",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "color_white",
+      },
+    ],
+    image: qms,
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Query-Management-System",
+  },
+  {
+    name: "Defi - Flash Loan Contract",
+    description:
+      "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: fld,
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/DeFi--Create-a-Flash-Loan-contract-using-Aave",
   },
   {
     name: "Self Uniswap or (DEFI)",
@@ -485,111 +531,12 @@ const projects = [
       },
       {
         name: "docker",
-        color: "white-text-gradient",
+        color: "color_white",
       },
     ],
     image: pool,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Get-Pool-Feeds-From-different-dexs",
-  },
-  {
-    name: "Defi - Flash Loan Contract",
-    description:
-      "Create and deploy a Flash loan smart contract for traditional finance. Receive funding with the liquidity protocol called Aave. Transact with our deployed contract to execute a Flash loan.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: fld,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/DeFi--Create-a-Flash-Loan-contract-using-Aave",
-  },
-  {
-    name: "Ecommerce Store",
-    description:
-      "This ecommerce store is not like amazon or daraz. This website have an admin panel and a client panel. Admin dashboard only under of admin and only admin can add, delete or update product.  Admin will keep watching products statics. Clients can watch and purchase products. If any product stock have end, you will find out. Admin can also watch all about products deliveries.",
-    tags: [
-      {
-        name: "node - express",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react - next",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mongodb - mongoose",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "redux-toolkit",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwindcss - bootstrap",
-        color: "white-text-gradient",
-      },
-    ],
-    image: ecommerce,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
-  },
-  {
-    name: "Communication Between Client, You & Third-Party",
-    description:
-      "In this project, I am doing communication better between clients, merchants and software houses or freelancers or service sellers whatever you can say.  If two much merchants or third parties wants to give you any client project then they will add in this website and you can see and select whatever project should take.",
-    tags: [
-      {
-        name: "next - react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongoose - mongodb",
-        color: "grenn-text-gradient",
-      },
-      {
-        name: "node",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "white-text-gradient",
-      },
-    ],
-    image: p1,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Manage-Communication",
-  },
-  {
-    name: "Query Management System",
-    description:
-      "In client portal, you'll need to register or log in. Once you're in, you'll be able to browse through a variety of websites and view demos for each one. In admin portal if you looking to purchase a website, then your details and the website you're interested in, will reach us. We'll review your request and get in touch if we need any additional information or have any questions.",
-    tags: [
-      {
-        name: "mongodb - mongoose",
-        color: "green-text-gradient",
-      },
-      {
-        name: "node - express",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react - next",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "white-text-gradient",
-      },
-    ],
-    image: qms,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/Query-Management-System",
+    source_code_link:
+      "https://github.com/MirzaMuhammadBaig/Get-Pool-Feeds-From-different-dexs",
   },
 ];
 

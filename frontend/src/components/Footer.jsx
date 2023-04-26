@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
+import "../design/custom.css";
+
 
 const Footer = () => {
   const [active, setActive] = useState("");
@@ -30,7 +32,7 @@ const Footer = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+        scrolled ? "bgColor" : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -58,7 +60,7 @@ const Footer = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`/${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
@@ -88,7 +90,7 @@ const Footer = () => {
                     setActive(nav.title);
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a href={`/${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
             </ul>
