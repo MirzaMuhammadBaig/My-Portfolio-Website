@@ -51,7 +51,7 @@ export default function ResetPassSlide() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:5000/forgot-password",
+        url: "https://bwd-server-utgj.vercel.app/forgot-password",
         data: obj,
       });
       if (response.status) {
@@ -67,7 +67,7 @@ export default function ResetPassSlide() {
       const intervalId = setInterval(async () => {
         const response2 = await axios({
           method: "GET",
-          url: `http://localhost:5000/isverify/${id}`,
+          url: `https://bwd-server-utgj.vercel.app/isverify/${id}`,
         });
         console.log("response2", response2.data);
         if (response2.data.user.is_allowed_for_reset_pass === true) {
