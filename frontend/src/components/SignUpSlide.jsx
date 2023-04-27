@@ -62,7 +62,7 @@ export default function SignUpSide() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:5000/register",
+        url: "https://bwd-server-utgj.vercel.app/register",
         data: obj,
       });
       if (response.status) {
@@ -77,7 +77,7 @@ export default function SignUpSide() {
       const intervalId = setInterval(async () => {
         const response2 = await axios({
           method: "GET",
-          url: `http://localhost:5000/isverify/${id}`,
+          url: `https://bwd-server-utgj.vercel.app/isverify/${id}`,
         });
         console.log("response2", response2.data);
         if (response2.data.user.is_verified === true) {
