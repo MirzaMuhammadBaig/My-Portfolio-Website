@@ -58,7 +58,7 @@ export default function ResetPassSlide() {
 
       const response = await axios({
         method: "POST",
-        url: `http://localhost:5000/reset-password/${passtoken}`,
+        url: `https://bwd-server-utgj.vercel.app/reset-password/${passtoken}`,
         data: obj,
       });
       console.log("response", response);
