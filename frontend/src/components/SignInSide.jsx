@@ -58,7 +58,7 @@ export default function SignInSide() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:5000/login",
+        url: "https://bwd-server-utgj.vercel.app/login",
         data: obj,
       });
       if (response.status) {
