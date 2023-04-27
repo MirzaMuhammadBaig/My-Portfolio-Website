@@ -78,26 +78,26 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
+  // {
+  //   name: "TypeScript",
+  //   icon: typescript,
+  // },
   {
     name: "React JS",
     icon: reactjs,
   },
-  {
-    name: "Next js",
-    icon: next,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "Express JS",
-    icon: express,
-  },
+  // {
+  //   name: "Next js",
+  //   icon: next,
+  // },
+  // {
+  //   name: "Node JS",
+  //   icon: nodejs,
+  // },
+  // {
+  //   name: "Express JS",
+  //   icon: express,
+  // },
   {
     name: "Ether JS",
     icon: etherjs,
@@ -110,14 +110,14 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Kafka",
-    icon: kafka,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  // {
+  //   name: "Kafka",
+  //   icon: kafka,
+  // },
+  // {
+  //   name: "docker",
+  //   icon: docker,
+  // },
   {
     name: "IPFS",
     icon: ipfs,
@@ -319,27 +319,28 @@ const projects = [
     source_code_link:
       "https://github.com/MirzaMuhammadBaig/Presale-or-initial-coin-offering-ICO-",
   },
-  {
-    name: "Create Blockchain Using Javascript",
-    description:
-      "In this project, I have created a many functions of blockchain using JavaScript and the more confusion was exists in my mind that how does blockchain work practically?, the more confusion have cleared about how does blockchain work?",
-    tags: [
-      {
-        name: "javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "express",
-        color: "green-text-gradient",
-      },
-      {
-        name: "redis",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: blockchain,
-    source_code_link: "https://github.com/",
-  },
+  // {
+  //   name: "Create Blockchain Using Javascript",
+  //   description:
+  //     "In this project, I have created a many functions of blockchain using JavaScript and the more confusion was exists in my mind that how does blockchain work practically?, the more confusion have cleared about how does blockchain work?",
+  //   tags: [
+  //     {
+  //       name: "javascript",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "express",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "redis",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: blockchain,
+  //   source_code_link:
+  //     "https://github.com/MirzaMuhammadBaig/Create-Blockchain-From-Scratch",
+  // },
   {
     name: "TokenLuncher Airdrop",
     description:
@@ -372,77 +373,77 @@ const projects = [
     source_code_link:
       "https://github.com/MirzaMuhammadBaig/Crowd-Funding-Contract",
   },
-  {
-    name: "Ecommerce Store",
-    description:
-      "This ecommerce store has separate admin and client panels. Only the admin can manage products through the admin dashboard, including adding, deleting, and updating. The admin can also monitor product statistics and deliveries. Clients can browse and purchase products, and the website alerts when a product is out of stock.",
-    tags: [
-      {
-        name: " express",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "next",
-        color: "green-text-gradient",
-      },
-      {
-        name: "react",
-        color: "color_yellowgreen",
-      },
-      {
-        name: "mongodb",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "redux-toolkit",
-        color: "color_yellow",
-      },
-      {
-        name: "tailwind",
-        color: "color_white",
-      },
-      {
-        name: "bootstrap",
-        color: "color_brown",
-      },
-    ],
-    image: ecommerce,
-    source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
-  },
-  {
-    name: "Communication Between Client, You & Third-Party",
-    description:
-      "This project improves communication among clients, merchants, and software professionals. Third parties can post client projects on the website, and users can browse and select projects to work on.",
-    tags: [
-      {
-        name: "next",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "react",
-        color: "color_yellowgreen",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mongoose",
-        color: "color_red",
-      },
-      {
-        name: "node",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "color_white",
-      },
-    ],
-    image: p1,
-    source_code_link:
-      "https://github.com/MirzaMuhammadBaig/Manage-Communication",
-  },
+  // {
+  //   name: "Ecommerce Store",
+  //   description:
+  //     "This ecommerce store has separate admin and client panels. Only the admin can manage products through the admin dashboard, including adding, deleting, and updating. The admin can also monitor product statistics and deliveries. Clients can browse and purchase products, and the website alerts when a product is out of stock.",
+  //   tags: [
+  //     {
+  //       name: " express",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "next",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "react",
+  //       color: "color_yellowgreen",
+  //     },
+  //     {
+  //       name: "mongodb",
+  //       color: "pink-text-gradient",
+  //     },
+  //     {
+  //       name: "redux-toolkit",
+  //       color: "color_yellow",
+  //     },
+  //     {
+  //       name: "tailwind",
+  //       color: "color_white",
+  //     },
+  //     {
+  //       name: "bootstrap",
+  //       color: "color_brown",
+  //     },
+  //   ],
+  //   image: ecommerce,
+  //   source_code_link: "https://github.com/MirzaMuhammadBaig/ecommerce-store",
+  // },
+  // {
+  //   name: "Communication Between Client, You & Third-Party",
+  //   description:
+  //     "This project improves communication among clients, merchants, and software professionals. Third parties can post client projects on the website, and users can browse and select projects to work on.",
+  //   tags: [
+  //     {
+  //       name: "next",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "react",
+  //       color: "color_yellowgreen",
+  //     },
+  //     {
+  //       name: "mongodb",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "mongoose",
+  //       color: "color_red",
+  //     },
+  //     {
+  //       name: "node",
+  //       color: "pink-text-gradient",
+  //     },
+  //     {
+  //       name: "tailwind",
+  //       color: "color_white",
+  //     },
+  //   ],
+  //   image: p1,
+  //   source_code_link:
+  //     "https://github.com/MirzaMuhammadBaig/Manage-Communication",
+  // },
   {
     name: "Query Management System",
     description:
