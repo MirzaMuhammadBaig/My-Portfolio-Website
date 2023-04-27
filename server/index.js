@@ -2,9 +2,9 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import { dbConnect } from "./config/connect.js";
-import userroutes from "./routes/userroutes.js";
-import {notFound, errorHandler} from "./middlewares/errorHandler.js"
+import { dbConnect } from "./src/config/connect.js";
+import userroutes from "./src/routes/userroutes.js";
+import { notFound, errorHandler } from "./src/middlewares/errorHandler.js";
 
 // execute database connection
 dbConnect();
@@ -22,7 +22,7 @@ app.use(userroutes);
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3999;
+const PORT = 3999;
 app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+  console.log(`⚡️[server]: Server is running`);
 });

@@ -4,12 +4,12 @@ import { transporter } from "../config/nodemailer.js";
 dotenv.config({});
 
 export const sendMail = async (req, res) => {
-    try {
-        const mailOptions = {
-            from: req.body.email, // sender address
-            to: process.env.email, // list of receivers
-            subject: req.body.subject, // Subject line
-            html: `
+  try {
+    const mailOptions = {
+      from: req.body.email, // sender address
+      to: process.env.email, // list of receivers
+      subject: req.body.subject, // Subject line
+      html: `
         <html>
           <head>
             <style>
@@ -48,28 +48,28 @@ export const sendMail = async (req, res) => {
           </body>
         </html>
       `,
-        };
+    };
 
-        console.log(req.body.name, "This is response");
+    // console.log(req.body.name, "This is response");
 
-        transporter.sendMail(mailOptions, function (err, info) {
-            console.log("🚀 ~ file: index.js:39 ~ mailOptions", mailOptions);
-            if (err) {
-                res.status(500).send({
-                    success: false,
-                    message: "Something went wrong. Try again later",
-                });
-            } else {
-                res.send({
-                    success: true,
-                    message: "Thanks for contacting us. We will get back to you shortly",
-                });
-            }
-        });
-    } catch (error) {
+    transporter.sendMail(mailOptions, function (err, info) {
+      // console.log("🚀 ~ file: index.js:39 ~ mailOptions", mailOptions);
+      if (err) {
         res.status(500).send({
-            success: false,
-            message: "Something went wrong. Try again later",
+          success: false,
+          message: "Something went wrong. Try again later",
         });
-    }
+      } else {
+        res.send({
+          success: true,
+          message: "Thanks for contacting us. We will get back to you shortly",
+        });
+      }
+    });
+  } catch (error) {
+    res.status(500).send({
+      success: false,
+      message: "Something went wrong. Try again later",
+    });
+  }
 };

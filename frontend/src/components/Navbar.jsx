@@ -50,8 +50,8 @@ const Navbar = () => {
             className="w-9 h-9 object-contain alignment"
           />
           <p className="text-white -[18px] font-bold cursor-pointer flex ">
-            Blockchain-Web &nbsp;
-            <span className="sm:block hidden settext">DEV</span>
+            BWD&nbsp;
+            <span className="sm:block hidden settext"></span>
           </p>
         </Link>
 
@@ -130,7 +130,7 @@ const Navbar = () => {
                 <>
                   <li
                     key={nav.id}
-                    className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                    className={`settext font-poppins font-medium cursor-pointer text-[16px] ${
                       active === nav.title ? "text-white" : "text-secondary"
                     }`}
                     onClick={() => {
@@ -138,7 +138,9 @@ const Navbar = () => {
                       setActive(nav.title);
                     }}
                   >
-                    <a href={`${nav.id}`}>{nav.title}</a>
+                    <a className="settext color_white" href={`#${nav.id}`}>
+                      {nav.title}
+                    </a>
                   </li>
                 </>
               ))}
@@ -147,7 +149,11 @@ const Navbar = () => {
                   "Github" ? "text-secondary" : "text-white"
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
-                <a href={`https://github.com/MirzaMuhammadBaig`} target="blank">
+                <a
+                  className="settext color_white"
+                  href={`https://github.com/MirzaMuhammadBaig`}
+                  target="blank"
+                >
                   {"Github"}
                 </a>
               </li>
@@ -158,6 +164,7 @@ const Navbar = () => {
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
                 <a
+                  className="settext color_white"
                   href={`https://www.linkedin.com/in/mirza-muhammad-baig-blockchain-developer/`}
                   target="blank"
                 >
@@ -171,6 +178,7 @@ const Navbar = () => {
                 } hover:text-white text-[14px] font-medium cursor-pointer`}
               >
                 <a
+                  className="settext color_white"
                   href={`https://www.fiverr.com/mirzamuhammad68`}
                   target="blank"
                 >

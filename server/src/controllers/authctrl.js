@@ -37,7 +37,7 @@ export const IsUserVerified = expressAsyncHandler(async (req, res) => {
     const user = await User.findById(id);
     res.status(200).json({
       user,
-      message: "Email verified successfully"
+      message: "Email verified successfully",
     });
   } catch (error) {
     throw new Error(error);
@@ -50,13 +50,12 @@ export const verifyMail = async (req, res) => {
       { _id: req.query.id },
       { $set: { is_verified: true } }
     );
-    console.log(updateInfo);
+    // console.log(updateInfo);
     res.status(201).json({
       message: "Email verified successfully",
     });
-
   } catch (error) {
-    console.log(`Error:- ${error.message}`);
+    // console.log(`Error:- ${error.message}`);
     res.status(400).json({
       message: "Email not verified",
     });
@@ -65,7 +64,6 @@ export const verifyMail = async (req, res) => {
 
 // Register route
 export const register = expressAsyncHandler(async (req, res) => {
-
   const email = req.body.email;
   const findUser = await User.findOne({
     email: email,
@@ -73,7 +71,6 @@ export const register = expressAsyncHandler(async (req, res) => {
   });
 
   if (!findUser) {
-
     try {
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -95,16 +92,16 @@ export const register = expressAsyncHandler(async (req, res) => {
       if (userData) {
         try {
           const mailOptions = {
-            from: process.env.email, // sender address
+            from: "blockchaindeveloper0990@gmail.com", // sender address
             to: user.email,
             subject: "For verify mail",
-            html: `Hi ${user.name}, please click <a href="http://localhost:5000/verify?id=${user._id}"> here </a>to verify mail.`,
+            html: `Hi ${user.name}, please click <a href="https://bwd-server-utgj.vercel.app/verify?id=${user._id}"> here </a>to verify mail.`,
           };
 
-          console.log(req.body.name, "This is response");
+          // console.log(req.body.name, "This is response");
 
           transporter.sendMail(mailOptions, async function (error, info) {
-            console.log("🚀 ~ mailOptions", mailOptions);
+            // console.log("🚀 ~ mailOptions", mailOptions);
             if (error) {
               await User.findByIdAndDelete(user._id);
               res.status(500).send({
@@ -129,12 +126,13 @@ export const register = expressAsyncHandler(async (req, res) => {
                   name: user.name,
                   isVerified: user.is_verified,
                 },
-                message: "Email has been sent at " + user.email + " please verify",
+                message:
+                  "Email has been sent at " + user.email + " please verify",
               });
             }
           });
         } catch (error) {
-          console.log(error);
+          // console.log(error);
           await User.findByIdAndDelete(user._id);
           res.status(504).send({
             success: false,
@@ -147,15 +145,13 @@ export const register = expressAsyncHandler(async (req, res) => {
           message: "Email not verified",
         });
       }
-
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       res.status(500).json({
         error: "Server error",
       });
     }
   } else {
-
     throw new Error("User Already Exists");
   }
 });
@@ -185,7 +181,7 @@ export const login = expressAsyncHandler(async (req, res) => {
       });
     } else {
       const token = generateToken(user?._id);
-      console.log("token", token);
+      // console.log("token", token);
       const updateuser = await User.findByIdAndUpdate(
         user.id,
         {
@@ -202,16 +198,14 @@ export const login = expressAsyncHandler(async (req, res) => {
         },
         message: "User login successfully",
       });
-    };
-
+    }
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     res.status(500).json({
       error: "Something went wrong",
     });
   }
 });
-
 
 //////////////////////////////////
 
@@ -229,13 +223,14 @@ export const verify_Mail = expressAsyncHandler(async (req, res) => {
       { $set: { is_allowed_for_reset_pass: true } }
     );
 
-    console.log(updateInfo);
+    // console.log(updateInfo);
     res.status(201).json({
-      message: "Email verified successfully" + `click on this http://localhost:5000/reset-password/${user.resetPasswordToken} for set password`,
+      message:
+        "Email verified successfully" +
+        `click on this https://bwd-server-utgj.vercel.app/reset-password/${user.resetPasswordToken} for set password`,
     });
-
   } catch (error) {
-    console.log(`Error:- ${error.message}`);
+    // console.log(`Error:- ${error.message}`);
     res.status(401).json({
       message: "Email not verified",
     });
@@ -249,31 +244,31 @@ export const forgotPassword = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user || user.is_verified === false) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: "User not found" });
     }
 
-    const token = crypto.randomBytes(20).toString('hex');
+    const token = crypto.randomBytes(20).toString("hex");
     user.resetPasswordToken = token;
     user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
 
     await user.save();
 
     const mailOptions = {
-      from: process.env.EMAIL_ID,
+      from: "blockchaindeveloper0990@gmail.com",
       to: email,
-      subject: 'Reset Password',
+      subject: "Reset Password",
       text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n
         Please click on the following link, or paste this into your browser to complete the process:\n\n
-        http://localhost:5000/verify-mail?id=${user._id}\n\n
-        If you did not request this, please ignore this email and your password will remain unchanged.\n`
+        https://bwd-server-utgj.vercel.app/verify-mail?id=${user._id}\n\n
+        If you did not request this, please ignore this email and your password will remain unchanged.\n`,
     };
-    //         http://localhost:5000/reset-password/${token}
-    console.log(req.body.email, "This is response");
+
+    // console.log(req.body.email, "This is response");
 
     transporter.sendMail(mailOptions, (err, response) => {
-      console.log("🚀 ~ mailOptions", mailOptions);
+      // console.log("🚀 ~ mailOptions", mailOptions);
       if (err) {
-        console.error('there was an error: ', err);
+        // console.error('there was an error: ', err);
       } else {
         // console.log('here is the response: ', response);
         res.status(201).json({
@@ -284,7 +279,8 @@ export const forgotPassword = async (req, res) => {
             name: user.name,
             is_allowed_for_reset_pass: user.is_allowed_for_reset_pass,
           },
-          message: "Recovery email has been sent at " + user.email + " please verify",
+          message:
+            "Recovery email has been sent at " + user.email + " please verify",
         });
       }
     });
@@ -293,13 +289,11 @@ export const forgotPassword = async (req, res) => {
   }
 };
 
-//////////////////////// 
+////////////////////////
 
 export const setForgotPassword = async (req, res) => {
-
   const { token } = req.params;
   const { password } = req.body;
-
 
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt.hash(password, salt);
@@ -308,11 +302,13 @@ export const setForgotPassword = async (req, res) => {
     const user = await User.findOne({
       resetPasswordToken: token,
       resetPasswordExpires: { $gt: Date.now() },
-      is_allowed_for_reset_pass: true
+      is_allowed_for_reset_pass: true,
     });
 
     if (!user) {
-      return res.status(400).json({ message: 'Token is invalid or has expired' });
+      return res
+        .status(400)
+        .json({ message: "Token is invalid or has expired" });
     }
 
     user.password = hashedPassword;
@@ -323,7 +319,7 @@ export const setForgotPassword = async (req, res) => {
 
     await user.save();
 
-    res.status(200).json('password reset successfully');
+    res.status(200).json("password reset successfully");
   } catch (error) {
     res.status(500).json({ message: error });
   }
