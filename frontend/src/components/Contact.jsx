@@ -61,7 +61,7 @@ const Contact = () => {
 
       const response = await axios({
         method: "POST",
-        url: "http://localhost:5000/sendmail",
+        url: "https://bwd-server-utgj.vercel.app/sendmail",
         data: obj,
       });
       setLoading(false);
