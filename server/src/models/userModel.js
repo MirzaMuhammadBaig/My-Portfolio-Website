@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 
 const userSchema = new mongoose.Schema({
-  name:{
+  name: {
     type: String,
     required: [true, "Please provide an name"],
     minLength: [4, "Name should be greater than 4 characters"],
@@ -25,8 +25,19 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  is_allowed_for_reset_pass: {
+    type: Boolean,
+    default: false,
+  },
+  token: {
+    type: String,
+  },
   resetPasswordToken: String,
   resetPasswordExpires: Date
-});
+},
+  {
+    timestamps: true,
+  }
+);
 
 export const User = mongoose.model("User", userSchema);

@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import { dbConnect } from "./config/connect.js";
 import userroutes from "./routes/userroutes.js";
+import {notFound, errorHandler} from "./middlewares/errorHandler.js"
 
 // execute database connection
 dbConnect();
@@ -17,6 +18,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(userroutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3999;
 app.listen(PORT, () => {
